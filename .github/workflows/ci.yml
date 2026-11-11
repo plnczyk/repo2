@@ -1,0 +1,22 @@
+name: Moj Pierwszy Workflow
+
+# Określamy, kiedy akcja ma się uruchomić
+on:
+  push:
+    branches: [ "main" ] # Uruchomi się po pushu do gałęzi main
+
+jobs:
+  build:
+    # Wybieramy system operacyjny, na którym wykona się zadanie
+    runs-on: ubuntu-latest
+
+    steps:
+      # Krok 1: Pobranie kodu źródłowego repozytorium do maszyny wirtualnej
+      - name: Sprawdź kod repozytorium
+        uses: actions/checkout@v4
+
+      # Krok 2: Przykładowe działanie – wyświetlenie wiadomości
+      - name: Uruchom prosty test
+        run: |
+          echo "Kod został pomyślnie spushowany!"
+          echo "Tutaj możesz uruchomić testy, budowanie aplikacji lub deployment."
